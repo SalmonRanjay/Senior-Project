@@ -20,7 +20,7 @@
     self.infoNameLabel.text = self.infoObject[@"name"];
     self.infoLocationLabel.text = self.infoObject[@"location"];
     self.infoTimeLabel.text = self.infoObject[@"time"];
-    self.infoCompanyLabel.text = self.infoObject[@"Company"];
+    self.infoCompanyLabel.text = self.infoObject[@"company"];
     self.infoEventDate.text = self.infoObject[@"date"];
     self.infoDescriptionLabel.text = self.infoObject[@"description"];
     self.infoDescriptionLabel.lineBreakMode = NSLineBreakByWordWrapping;
@@ -29,6 +29,11 @@
     self.eventDate = [[NSDate alloc] init];
     self.eventDate = self.infoObject[@"date"];
     NSLog(@"Date: %@",self.eventDate);
+    
+    NSLog(@"Time: %@",self.infoTimeLabel);
+
+    NSLog(@"Company: %@",self.infoCompanyLabel);
+    
 }
 
 - (void)didReceiveMemoryWarning {

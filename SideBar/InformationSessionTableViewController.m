@@ -44,6 +44,7 @@
     [super viewDidLoad];
     
     
+    
     PFUser *currentUser = [PFUser currentUser];
     if (currentUser) {
         // let them enjoy the app
@@ -84,7 +85,9 @@
 - (PFQuery *)queryForTable
 {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
-    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+    
+    [query whereKey:@"target_major" equalTo:@"Computer Science"];
+    //query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     
     return query;
 }
