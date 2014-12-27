@@ -1,30 +1,27 @@
 //
-//  InformationSessionTableViewController.m
+//  JobOppTableViewController.m
 //  SideBar
 //
-//  Created by Ranjay Salmon on 11/30/14.
+//  Created by Ranjay Salmon on 12/5/14.
 //  Copyright (c) 2014 Ranjay Salmon. All rights reserved.
 //
 
-#import "InformationSessionTableViewController.h"
+#import "JobOppTableViewController.h"
 #import "SWRevealViewController.h"
-#import "DetailInformationViewController.h"
 
-@interface InformationSessionTableViewController ()
+
+@interface JobOppTableViewController ()
 
 @end
 
-@implementation InformationSessionTableViewController
-
-
-///
+@implementation JobOppTableViewController
 
 - (id)initWithCoder:(NSCoder *)aCoder
 {
     self = [super initWithCoder:aCoder];
     if (self) {
         // The className to query on
-        self.parseClassName = @"Information_Sessions";
+        self.parseClassName = @"Job";
         
         // The key of the PFObject to display in the label of the default cell style
         self.textKey = @"name";
@@ -39,24 +36,9 @@
 }
 
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    
-    PFUser *currentUser = [PFUser currentUser];
-    if (currentUser) {
-        // let them enjoy the app
-    }else{
-        // show to login screen
-         [self performSegueWithIdentifier:@"loginscreen" sender:self];
-        
-    }
-
-    
-   
-   
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     self.sidebarButton.target = self.revealViewController;
     self.sidebarButton.action = @selector(revealToggle:);
@@ -66,26 +48,15 @@
     
     
     // Parse Test Object
-    
+
 }
 
-- (void) viewWillAppear:(BOOL)animated{
-    
-    [super viewWillAppear:animated];
-    
-    // Display the navigation bar
-    [self.navigationController.navigationBar setHidden:NO];
-}
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
@@ -112,14 +83,25 @@
                                       reuseIdentifier:cellIdentifier];
     }
     
-    self.information = self.objects;
+    //self.information = self.objects;
     // Configure the cell to show todo item with a priority at the bottom
     cell.textLabel.text = object[@"name"];
-  
+    
     
     return cell;
 }
 
+
+
+/*
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    
+    // Configure the cell...
+    
+    return cell;
+}
+*/
 
 /*
 // Override to support conditional editing of the table view.
@@ -155,31 +137,14 @@
 }
 */
 
-
+/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    
-    NSIndexPath *path =  [self.tableView indexPathForSelectedRow];
-    if ([segue.identifier isEqualToString:@"showdetail"]) {
-        
-        DetailInformationViewController *transferObject = (DetailInformationViewController *)segue.destinationViewController;
-        
-        transferObject.infoObject = [self.objects objectAtIndex:path.row];
-        
-    }
-    
-   
 }
+*/
 
-
-- (IBAction)logout:(id)sender {
-    
-    
-    [PFUser logOut];
-    [self performSegueWithIdentifier:@"loginscreen" sender:self];
-}
 @end

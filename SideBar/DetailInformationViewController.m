@@ -100,5 +100,10 @@
             [eventStore saveEvent:event span:EKSpanThisEvent error:&err];
         }
     }];
+    
+    
+    UIAlertView *alerview = [[UIAlertView alloc] initWithTitle:@"Congrats" message:@"Event has been added to your calendar" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    
+    [alerview show];
 }
 @end

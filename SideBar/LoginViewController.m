@@ -19,7 +19,25 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self.navigationItem setHidesBackButton:YES];
+    //[self.navigationItem setHidesBackButton:YES];
+    
+    // Adjusting the background imageView in code
+//    if ([UIScreen mainScreen].bounds.size.height == 568) {
+//        self.backgroundImageView.image = [UIImage imageNamed:@"loginBG"];
+//    }
+    
+    
+    // setting the textfield's to be their own delegate
+//    self.userIDTextfield.delegate = self;
+//    self.passwordTextField.delegate = self;
+}
+
+- (void) viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    
+    // Hide the navigation bar
+    [self.navigationController.navigationBar setHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -73,4 +91,13 @@
     
     
 }
+
+# pragma mark - UITextFieldDelegates
+
+// When a text field is pressed and the return key is hit it is dismissed
+//- (BOOL) textFieldShouldReturn:(UITextField *)textField{
+//    
+//    [textField resignFirstResponder];
+//    return YES;
+//}
 @end
