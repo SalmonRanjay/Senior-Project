@@ -106,15 +106,23 @@
 {
     static NSString *cellIdentifier = @"Cell";
     
+    
+    
+    
     PFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
         cell = [[PFTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
                                       reuseIdentifier:cellIdentifier];
     }
     
+    UIColor *disclosureColor =[UIColor colorWithRed:1 green:0.4314 blue:0.1569 alpha:1];
+
     self.information = self.objects;
     // Configure the cell to show todo item with a priority at the bottom
     cell.textLabel.text = object[@"name"];
+    cell.accessoryView = [MSCellAccessory accessoryWithType:FLAT_DISCLOSURE_INDICATOR color:disclosureColor];
+    
+    
   
     
     return cell;

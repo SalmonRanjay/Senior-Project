@@ -66,7 +66,7 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="CEDAR connect" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rQg-hA-AlO">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="heightClass=regular-widthClass=compact">
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -74,6 +74,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="1" green="0.49019610879999997" blue="0.17254902420000001" alpha="1" colorSpace="deviceRGB"/>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="info-session" id="GqZ-sK-b8V">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -313,7 +314,7 @@
             </objects>
             <point key="canvasLocation" x="1429.5" y="-2025"/>
         </scene>
-        <!--Road Map Table View Controller-->
+        <!--Road Map-->
         <scene sceneID="hTU-oh-jLl">
             <objects>
                 <tableViewController id="dOH-eP-2ax" customClass="RoadMapTableViewController" sceneMemberID="viewController">
@@ -334,7 +335,7 @@
                             <outlet property="delegate" destination="dOH-eP-2ax" id="pR8-45-GJC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="xXf-No-VJl">
+                    <navigationItem key="navigationItem" title="Road Map" id="xXf-No-VJl">
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="Mr6-X4-JYc"/>
                     </navigationItem>
                     <connections>
@@ -345,10 +346,10 @@
             </objects>
             <point key="canvasLocation" x="3280.5" y="-585"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Where's The Food-->
         <scene sceneID="tUV-IG-Vd5">
             <objects>
-                <tableViewController id="l5H-ic-d3s" sceneMemberID="viewController">
+                <tableViewController id="l5H-ic-d3s" customClass="WhereTheFoodTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="OH1-uB-LA8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -366,9 +367,12 @@
                             <outlet property="delegate" destination="l5H-ic-d3s" id="ATF-UZ-R79"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="kPI-MB-4um">
+                    <navigationItem key="navigationItem" title="Where's The Food" id="kPI-MB-4um">
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="7RI-dx-cer"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="sidebarButton" destination="7RI-dx-cer" id="CbP-Ql-9h6"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cjb-md-zrI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -390,7 +394,7 @@
             </objects>
             <point key="canvasLocation" x="1249.5" y="461.25"/>
         </scene>
-        <!--Information Session Table View Controller-->
+        <!--Information Sessions-->
         <scene sceneID="Un2-eJ-JmA">
             <objects>
                 <tableViewController id="yAI-AV-1TT" customClass="InformationSessionTableViewController" sceneMemberID="viewController">
@@ -404,6 +408,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9UY-jL-BcH" id="N3m-VG-7ka">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="1" green="0.49019610879999997" blue="0.17254902420000001" alpha="0.14999999999999999" colorSpace="deviceRGB"/>
                                 <connections>
                                     <segue destination="qch-if-h3B" kind="show" identifier="showdetail" id="CL9-eX-ezR"/>
                                 </connections>
@@ -414,7 +419,7 @@
                             <outlet property="delegate" destination="yAI-AV-1TT" id="bsw-L1-Ws5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="vjJ-7U-F3m">
+                    <navigationItem key="navigationItem" title="Information Sessions" id="vjJ-7U-F3m">
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="Stl-Ci-juu"/>
                         <barButtonItem key="rightBarButtonItem" title="Log out" id="VY3-xn-c9S">
                             <connections>
@@ -1365,7 +1370,7 @@
             </objects>
             <point key="canvasLocation" x="3292.5" y="1614"/>
         </scene>
-        <!--Workshop Table View Controller-->
+        <!--Work Shops-->
         <scene sceneID="LUr-p8-YnE">
             <objects>
                 <tableViewController id="ESZ-Bb-pkl" customClass="WorkshopTableViewController" sceneMemberID="viewController">
@@ -1386,7 +1391,7 @@
                             <outlet property="delegate" destination="ESZ-Bb-pkl" id="Xeu-09-Y8N"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="RCm-bN-V9J">
+                    <navigationItem key="navigationItem" title="Work Shops" id="RCm-bN-V9J">
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="D0d-1U-RNt"/>
                     </navigationItem>
                     <connections>
@@ -1397,7 +1402,7 @@
             </objects>
             <point key="canvasLocation" x="3280.5" y="174"/>
         </scene>
-        <!--Job Opp Table View Controller-->
+        <!--Job Opportunities-->
         <scene sceneID="7Uh-NT-NfT">
             <objects>
                 <tableViewController id="WQr-MN-JLT" customClass="JobOppTableViewController" sceneMemberID="viewController">
@@ -1418,7 +1423,7 @@
                             <outlet property="delegate" destination="WQr-MN-JLT" id="OPG-Ab-Nps"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="dyB-Lh-XBF">
+                    <navigationItem key="navigationItem" title="Job Opportunities" id="dyB-Lh-XBF">
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="d7Y-li-yg8"/>
                     </navigationItem>
                     <connections>

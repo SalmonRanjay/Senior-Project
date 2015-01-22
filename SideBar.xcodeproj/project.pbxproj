@@ -13,7 +13,6 @@
 		A63209041A2B13DC004080F2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63209011A2B13DC004080F2 /* CoreLocation.framework */; };
 		A63209051A2B13DC004080F2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63209021A2B13DC004080F2 /* MapKit.framework */; };
 		A63209061A2B13DC004080F2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63209031A2B13DC004080F2 /* QuartzCore.framework */; };
-		A632090D1A2BAFF3004080F2 /* FoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A632090C1A2BAFF3004080F2 /* FoodViewController.m */; };
 		A63209101A2BD263004080F2 /* InformationSessionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A632090F1A2BD263004080F2 /* InformationSessionTableViewController.m */; };
 		A63209131A2BD2B5004080F2 /* WorkshopTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A63209121A2BD2B5004080F2 /* WorkshopTableViewController.m */; };
 		A63209161A2BD2EF004080F2 /* RoadMapTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A63209151A2BD2EF004080F2 /* RoadMapTableViewController.m */; };
@@ -31,6 +30,9 @@
 		A63209301A2DAF66004080F2 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A632092F1A2DAF66004080F2 /* LoginViewController.m */; };
 		A6388A691A30CCEE002FB20A /* DetailInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6388A681A30CCEE002FB20A /* DetailInformationViewController.m */; };
 		A6388A6B1A30FAA4002FB20A /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6388A6A1A30FAA4002FB20A /* EventKit.framework */; };
+		A6446CF21A717A370082F989 /* WhereTheFoodTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6446CF11A717A370082F989 /* WhereTheFoodTableViewController.m */; };
+		A6446CF81A718EBE0082F989 /* MSCellAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = A6446CF51A718EBE0082F989 /* MSCellAccessory.m */; };
+		A6446CF91A718EBE0082F989 /* UIView+AccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6446CF71A718EBE0082F989 /* UIView+AccessViewController.m */; };
 		A6651D4D1A2AC84A0019F9DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6651D4C1A2AC84A0019F9DA /* main.m */; };
 		A6651D501A2AC84A0019F9DA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6651D4F1A2AC84A0019F9DA /* AppDelegate.m */; };
 		A6651D561A2AC84B0019F9DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6651D541A2AC84B0019F9DA /* Main.storyboard */; };
@@ -45,8 +47,6 @@
 		A6651D941A2AD3BB0019F9DA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6651D931A2AD3BB0019F9DA /* SWRevealViewController.m */; };
 		A6651D971A2AD4610019F9DA /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6651D961A2AD4610019F9DA /* MainViewController.m */; };
 		A6651D9A1A2AD4870019F9DA /* SidebarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6651D991A2AD4870019F9DA /* SidebarTableViewController.m */; };
-		A67089F21A2AD56500AF5ADF /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A67089F11A2AD56500AF5ADF /* MapViewController.m */; };
-		A67089F51A2AD57A00AF5ADF /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A67089F41A2AD57A00AF5ADF /* PhotoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,8 +69,6 @@
 		A63209011A2B13DC004080F2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A63209021A2B13DC004080F2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A63209031A2B13DC004080F2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		A632090B1A2BAFF3004080F2 /* FoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodViewController.h; sourceTree = "<group>"; };
-		A632090C1A2BAFF3004080F2 /* FoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodViewController.m; sourceTree = "<group>"; };
 		A632090E1A2BD263004080F2 /* InformationSessionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationSessionTableViewController.h; sourceTree = "<group>"; };
 		A632090F1A2BD263004080F2 /* InformationSessionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationSessionTableViewController.m; sourceTree = "<group>"; };
 		A63209111A2BD2B5004080F2 /* WorkshopTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkshopTableViewController.h; sourceTree = "<group>"; };
@@ -93,6 +91,12 @@
 		A6388A671A30CCEE002FB20A /* DetailInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailInformationViewController.h; sourceTree = "<group>"; };
 		A6388A681A30CCEE002FB20A /* DetailInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailInformationViewController.m; sourceTree = "<group>"; };
 		A6388A6A1A30FAA4002FB20A /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		A6446CF01A717A370082F989 /* WhereTheFoodTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhereTheFoodTableViewController.h; sourceTree = "<group>"; };
+		A6446CF11A717A370082F989 /* WhereTheFoodTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhereTheFoodTableViewController.m; sourceTree = "<group>"; };
+		A6446CF41A718EBE0082F989 /* MSCellAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCellAccessory.h; sourceTree = "<group>"; };
+		A6446CF51A718EBE0082F989 /* MSCellAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCellAccessory.m; sourceTree = "<group>"; };
+		A6446CF61A718EBE0082F989 /* UIView+AccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AccessViewController.h"; sourceTree = "<group>"; };
+		A6446CF71A718EBE0082F989 /* UIView+AccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AccessViewController.m"; sourceTree = "<group>"; };
 		A6651D471A2AC84A0019F9DA /* SideBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SideBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6651D4B1A2AC84A0019F9DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6651D4C1A2AC84A0019F9DA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -115,10 +119,6 @@
 		A6651D961A2AD4610019F9DA /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ../MainViewController.m; sourceTree = "<group>"; };
 		A6651D981A2AD4870019F9DA /* SidebarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SidebarTableViewController.h; path = ../SidebarTableViewController.h; sourceTree = "<group>"; };
 		A6651D991A2AD4870019F9DA /* SidebarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SidebarTableViewController.m; path = ../SidebarTableViewController.m; sourceTree = "<group>"; };
-		A67089F01A2AD56500AF5ADF /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = ../MapViewController.h; sourceTree = "<group>"; };
-		A67089F11A2AD56500AF5ADF /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = ../MapViewController.m; sourceTree = "<group>"; };
-		A67089F31A2AD57A00AF5ADF /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoViewController.h; path = ../PhotoViewController.h; sourceTree = "<group>"; };
-		A67089F41A2AD57A00AF5ADF /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoViewController.m; path = ../PhotoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +176,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A6446CF31A718EBE0082F989 /* MSCellAccessory */ = {
+			isa = PBXGroup;
+			children = (
+				A6446CF41A718EBE0082F989 /* MSCellAccessory.h */,
+				A6446CF51A718EBE0082F989 /* MSCellAccessory.m */,
+				A6446CF61A718EBE0082F989 /* UIView+AccessViewController.h */,
+				A6446CF71A718EBE0082F989 /* UIView+AccessViewController.m */,
+			);
+			path = MSCellAccessory;
+			sourceTree = "<group>";
+		};
 		A6651D3E1A2AC84A0019F9DA = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +208,7 @@
 		A6651D491A2AC84A0019F9DA /* SideBar */ = {
 			isa = PBXGroup;
 			children = (
+				A6446CF31A718EBE0082F989 /* MSCellAccessory */,
 				A6651D4E1A2AC84A0019F9DA /* AppDelegate.h */,
 				A6651D4F1A2AC84A0019F9DA /* AppDelegate.m */,
 				A6651D541A2AC84B0019F9DA /* Main.storyboard */,
@@ -214,16 +226,12 @@
 				A63209121A2BD2B5004080F2 /* WorkshopTableViewController.m */,
 				A63209141A2BD2EF004080F2 /* RoadMapTableViewController.h */,
 				A63209151A2BD2EF004080F2 /* RoadMapTableViewController.m */,
-				A632090B1A2BAFF3004080F2 /* FoodViewController.h */,
-				A632090C1A2BAFF3004080F2 /* FoodViewController.m */,
 				A6651D951A2AD4610019F9DA /* MainViewController.h */,
 				A6651D961A2AD4610019F9DA /* MainViewController.m */,
+				A6446CF01A717A370082F989 /* WhereTheFoodTableViewController.h */,
+				A6446CF11A717A370082F989 /* WhereTheFoodTableViewController.m */,
 				A6651D981A2AD4870019F9DA /* SidebarTableViewController.h */,
 				A6651D991A2AD4870019F9DA /* SidebarTableViewController.m */,
-				A67089F01A2AD56500AF5ADF /* MapViewController.h */,
-				A67089F11A2AD56500AF5ADF /* MapViewController.m */,
-				A67089F31A2AD57A00AF5ADF /* PhotoViewController.h */,
-				A67089F41A2AD57A00AF5ADF /* PhotoViewController.m */,
 				A6651D571A2AC84B0019F9DA /* Images.xcassets */,
 				A6651D591A2AC84B0019F9DA /* LaunchScreen.xib */,
 				A6651D911A2AD38E0019F9DA /* Library's */,
@@ -394,16 +402,16 @@
 				A6388A691A30CCEE002FB20A /* DetailInformationViewController.m in Sources */,
 				A6651D501A2AC84A0019F9DA /* AppDelegate.m in Sources */,
 				A6651D4D1A2AC84A0019F9DA /* main.m in Sources */,
-				A67089F21A2AD56500AF5ADF /* MapViewController.m in Sources */,
 				A62EF0001A31EC1F00C9661D /* JobOppTableViewController.m in Sources */,
 				A63209101A2BD263004080F2 /* InformationSessionTableViewController.m in Sources */,
+				A6446CF21A717A370082F989 /* WhereTheFoodTableViewController.m in Sources */,
 				A620CE0A1A4A061E007AA4ED /* TPKeyboardAvoidingScrollView.m in Sources */,
+				A6446CF81A718EBE0082F989 /* MSCellAccessory.m in Sources */,
 				A6651D941A2AD3BB0019F9DA /* SWRevealViewController.m in Sources */,
 				A63209301A2DAF66004080F2 /* LoginViewController.m in Sources */,
+				A6446CF91A718EBE0082F989 /* UIView+AccessViewController.m in Sources */,
 				A620CE051A47DAFB007AA4ED /* SignUpViewController.m in Sources */,
 				A6651D971A2AD4610019F9DA /* MainViewController.m in Sources */,
-				A632090D1A2BAFF3004080F2 /* FoodViewController.m in Sources */,
-				A67089F51A2AD57A00AF5ADF /* PhotoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

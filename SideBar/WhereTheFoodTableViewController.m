@@ -1,29 +1,29 @@
 //
-//  SidebarTableViewController.m
+//  WhereTheFoodTableViewController.m
 //  SideBar
 //
-//  Created by Ranjay Salmon on 11/29/14.
-//  Copyright (c) 2014 Ranjay Salmon. All rights reserved.
+//  Created by Ranjay Salmon on 1/22/15.
+//  Copyright (c) 2015 Ranjay Salmon. All rights reserved.
 //
 
-#import "SidebarTableViewController.h"
-#import "SWRevealViewController.h"
+#import "WhereTheFoodTableViewController.h"
 
-
-@interface SidebarTableViewController ()
+@interface WhereTheFoodTableViewController ()
 
 @end
 
-@implementation SidebarTableViewController
+@implementation WhereTheFoodTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    self.view.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
-//    self.tableView.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
-//    self.tableView.separatorColor = [UIColor colorWithWhite:0.15f alpha:0.2f];
     
-    self.menuItems = @[@"title", @"info-session", @"workshop", @"road-map", @"food",@"profile",@"job-opp"];
+    self.sidebarButton.target = self.revealViewController;
+    self.sidebarButton.action = @selector(revealToggle:);
+    
+    // Set the gesture
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+   
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,24 +34,26 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return self.menuItems.count;
+    return 0;
 }
 
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSString *CellIdentifier = [self.menuItems objectAtIndex:indexPath.row];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+/*
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    
+    // Configure the cell...
     
     return cell;
 }
+*/
 
 /*
 // Override to support conditional editing of the table view.
@@ -87,16 +89,14 @@
 }
 */
 
-
+/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    
-    
 }
-
+*/
 
 @end

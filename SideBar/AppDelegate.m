@@ -29,6 +29,9 @@
 //                                                           UITextAttributeTextShadowOffset,
 //                                                           [UIFont fontWithName:@"Helvetica-Light" size:20.0], UITextAttributeFont, nil]];
     
+    // Customize nav bar
+    [self customizeUserInterface];
+    
     // Parse SDK Info
     [Parse setApplicationId:@"tvUQBsqRrTFS6ozB4SljcJsj5vNci3uFdkqpEc5B"
                   clientKey:@"gwyvAG08S3hsIre4YXDFRzKVFzgK1j6P1wJ2Ku4C"];
@@ -56,6 +59,24 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    
+    
 }
 
+#pragma mark - Helper Methods
+
+
+-(void) customizeUserInterface{
+    
+    // Customize navigation bar
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:1 green:0.4314 blue:0.1569 alpha:1]];
+    
+    // Setting the color of the text in the navigation bar
+    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],UITextAttributeTextColor, nil]];
+    
+    // Set the color of the navigation bar buttons
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    
+}
 @end
