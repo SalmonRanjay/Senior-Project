@@ -65,7 +65,7 @@
     
     NSDateFormatter  *dateformatter= [[NSDateFormatter alloc] init];
     //[dateformatter setTimeZone:[NSTimeZone systemTimeZone]];
-    [dateformatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
+    [dateformatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EDT"]];
     [dateformatter setDateFormat:@"yyyy-MM-dd HH:mm "];
     NSDate *date = [dateformatter dateFromString:self.infoObject[@"date"]];
     
@@ -84,6 +84,8 @@
     
     event.startDate = eventDateAndTime;
     event.endDate = [[NSDate alloc] initWithTimeInterval:600 sinceDate:event.startDate];
+    
+    
     
     // Check if App has Permission to Post to the Calendar
     [eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
