@@ -10,24 +10,24 @@
 #import <Parse/Parse.h>
 #import <EventKit/EventKit.h>
 
+
 @interface DetailInformationViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *infoNameLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *infoLocationLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *infoTimeLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *infoCompanyLabel;
-
-@property (weak, nonatomic) IBOutlet UILabel *infoDescriptionLabel;
 
 @property (nonatomic, strong) PFObject *infoObject;
 
 @property (nonatomic, strong) NSDate *eventDate;
 
-@property (weak, nonatomic) IBOutlet UILabel *infoEventDate;
+@property (weak, nonatomic) IBOutlet UILabel *infoDescriptionLabel;
 
+
+@property (weak, nonatomic) IBOutlet UILabel *infoEventDate;
 
 - (IBAction)addToCalendar:(id)sender;
 

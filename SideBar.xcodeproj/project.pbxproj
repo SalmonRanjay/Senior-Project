@@ -30,6 +30,7 @@
 		A63209301A2DAF66004080F2 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A632092F1A2DAF66004080F2 /* LoginViewController.m */; };
 		A6388A691A30CCEE002FB20A /* DetailInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6388A681A30CCEE002FB20A /* DetailInformationViewController.m */; };
 		A6388A6B1A30FAA4002FB20A /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6388A6A1A30FAA4002FB20A /* EventKit.framework */; };
+		A63C4CC31A79FE720020199B /* TableCellsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A63C4CC21A79FE720020199B /* TableCellsViewController.m */; };
 		A6446CF21A717A370082F989 /* WhereTheFoodTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6446CF11A717A370082F989 /* WhereTheFoodTableViewController.m */; };
 		A6446CF81A718EBE0082F989 /* MSCellAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = A6446CF51A718EBE0082F989 /* MSCellAccessory.m */; };
 		A6446CF91A718EBE0082F989 /* UIView+AccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6446CF71A718EBE0082F989 /* UIView+AccessViewController.m */; };
@@ -91,6 +92,8 @@
 		A6388A671A30CCEE002FB20A /* DetailInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailInformationViewController.h; sourceTree = "<group>"; };
 		A6388A681A30CCEE002FB20A /* DetailInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailInformationViewController.m; sourceTree = "<group>"; };
 		A6388A6A1A30FAA4002FB20A /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		A63C4CC11A79FE710020199B /* TableCellsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableCellsViewController.h; sourceTree = "<group>"; };
+		A63C4CC21A79FE720020199B /* TableCellsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableCellsViewController.m; sourceTree = "<group>"; };
 		A6446CF01A717A370082F989 /* WhereTheFoodTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhereTheFoodTableViewController.h; sourceTree = "<group>"; };
 		A6446CF11A717A370082F989 /* WhereTheFoodTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhereTheFoodTableViewController.m; sourceTree = "<group>"; };
 		A6446CF41A718EBE0082F989 /* MSCellAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCellAccessory.h; sourceTree = "<group>"; };
@@ -222,6 +225,8 @@
 				A632092F1A2DAF66004080F2 /* LoginViewController.m */,
 				A632090E1A2BD263004080F2 /* InformationSessionTableViewController.h */,
 				A632090F1A2BD263004080F2 /* InformationSessionTableViewController.m */,
+				A63C4CC11A79FE710020199B /* TableCellsViewController.h */,
+				A63C4CC21A79FE720020199B /* TableCellsViewController.m */,
 				A63209111A2BD2B5004080F2 /* WorkshopTableViewController.h */,
 				A63209121A2BD2B5004080F2 /* WorkshopTableViewController.m */,
 				A63209141A2BD2EF004080F2 /* RoadMapTableViewController.h */,
@@ -401,6 +406,7 @@
 				A6651D9A1A2AD4870019F9DA /* SidebarTableViewController.m in Sources */,
 				A6388A691A30CCEE002FB20A /* DetailInformationViewController.m in Sources */,
 				A6651D501A2AC84A0019F9DA /* AppDelegate.m in Sources */,
+				A63C4CC31A79FE720020199B /* TableCellsViewController.m in Sources */,
 				A6651D4D1A2AC84A0019F9DA /* main.m in Sources */,
 				A62EF0001A31EC1F00C9661D /* JobOppTableViewController.m in Sources */,
 				A63209101A2BD263004080F2 /* InformationSessionTableViewController.m in Sources */,

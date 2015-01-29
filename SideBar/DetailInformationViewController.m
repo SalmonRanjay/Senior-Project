@@ -19,27 +19,25 @@
     // Do any additional setup after loading the view.
     self.infoNameLabel.text = self.infoObject[@"name"];
     self.infoLocationLabel.text = self.infoObject[@"location"];
-    self.infoTimeLabel.text = self.infoObject[@"time"];
+    //self.infoTimeLabel.text = self.infoObject[@"time"];
     self.infoCompanyLabel.text = self.infoObject[@"company"];
     self.infoEventDate.text = self.infoObject[@"date"];
     self.infoDescriptionLabel.text = self.infoObject[@"description"];
-    self.infoDescriptionLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    self.infoDescriptionLabel.numberOfLines = 0;
+    //self.infoDescriptionLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    //self.infoDescriptionLabel.numberOfLines = 0;
     
     self.eventDate = [[NSDate alloc] init];
     self.eventDate = self.infoObject[@"date"];
     NSLog(@"Date: %@",self.eventDate);
     
-    NSLog(@"Time: %@",self.infoTimeLabel);
-
-    NSLog(@"Company: %@",self.infoCompanyLabel);
-    
+       
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 /*
 #pragma mark - Navigation
@@ -54,27 +52,48 @@
 - (IBAction)addToCalendar:(id)sender {
     
     // Set the Date and Time for the Event
-//    NSDateComponents *comps = [[NSDateComponents alloc] init];
-//    [comps setYear:2014];
-//    [comps setMonth:12];
-//    [comps setDay:5];
-//    [comps setHour:9];
-//    [comps setMinute:0];
-//    [comps setTimeZone:[NSTimeZone systemTimeZone]];
-//    NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    //NSDateComponents *comps = [[NSDateComponents alloc] init];
+//    [comps setYear:2015];
+//    [comps setMonth:01];
+//    [comps setDay:29];
+//    [comps setHour:5];
+//    [comps setMinute:36];
+//    [comps setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EST"]];
+    //NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     
-    NSDateFormatter  *dateformatter= [[NSDateFormatter alloc] init];
-    //[dateformatter setTimeZone:[NSTimeZone systemTimeZone]];
-    [dateformatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EDT"]];
-    [dateformatter setDateFormat:@"yyyy-MM-dd HH:mm "];
-    NSDate *date = [dateformatter dateFromString:self.infoObject[@"date"]];
+//    NSDateFormatter  *dateformatter= [[NSDateFormatter alloc] init];
+//    NSLocale *posix = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+//    [dateformatter setLocale:posix];
+//    [dateformatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EST"]];
+//    [dateformatter setDateFormat:@"yyyy-MM-dd HH:mm "];
+//    NSDate *date = [dateformatter dateFromString:self.infoObject[@"date"]];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    
+    [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EST"]];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm a"];
+    
+    NSDate *date = [dateFormatter dateFromString:self.infoObject[@"date"]];
+    
+   
     
     NSLog(@"Date: %@",date);
     
     NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    NSDateComponents *comps = [cal components:NSCalendarUnitDay | NSCalendarUnitYear |NSCalendarUnitMonth fromDate:date];
+    [cal setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EST"]];
+    [cal setLocale:[NSLocale currentLocale]];
+    NSDateComponents *comps = [cal components:NSCalendarUnitDay | NSCalendarUnitYear |NSCalendarUnitMonth| NSCalendarUnitHour | NSCalendarUnitMinute fromDate:date];
     
     NSDate *eventDateAndTime = [cal dateFromComponents:comps];
+    
+    NSLog(@"Date from Date Comps: %@",eventDateAndTime);
+    NSLog(@"Comps year: %ld",(long)comps.year);
+    NSLog(@"Comps Month: %ld",(long)comps.month);
+    NSLog(@"Comps Day00: %ld",(long)comps.day);
+    NSLog(@"Comps hour: %ld",(long)comps.hour);
+    NSLog(@"Comps minute: %ld",(long)comps.minute);
+    
     
     // Set iCal Event
     EKEventStore *eventStore = [[EKEventStore alloc] init];
@@ -84,6 +103,14 @@
     
     event.startDate = eventDateAndTime;
     event.endDate = [[NSDate alloc] initWithTimeInterval:600 sinceDate:event.startDate];
+    
+    // Create a new alarm.
+    //EKAlarm *alarm = [EKAlarm alarmWithAbsoluteDate:eventDateAndTime];
+    // Add the alarm to the event.
+    //[event addAlarm:alarm];
+    
+    
+    [self createNotification:eventDateAndTime];
     
     
     
@@ -104,8 +131,39 @@
     }];
     
     
-    UIAlertView *alerview = [[UIAlertView alloc] initWithTitle:@"Congrats" message:@"Event has been added to your calendar" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    UIAlertView *alerview = [[UIAlertView alloc] initWithTitle:@"Event Synced" message:[NSString stringWithFormat:@"%@, Has been synced with your calendar",self.infoObject[@"name"]] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     
     [alerview show];
 }
+
+- (void)createNotification:(NSDate *)eventDateAndTime {
+    // create the Local notification
+    // Creating the local notificatin object
+    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+    
+    // creating the fire date
+    localNotification.fireDate = eventDateAndTime;
+    
+    // text displayed when the user is outside of the app
+    localNotification.alertBody = [NSString stringWithFormat:@"%@, Reminder",self.infoObject[@"name"]];
+    
+    
+    //    // badge app icon when notification is fired
+    //    localNotification.applicationIconBadgeNumber = 3;
+    
+    // Setting the sound of the notification to the standard notification sound
+    localNotification.soundName = UILocalNotificationDefaultSoundName;
+    
+    // Setting the sound with a custom sound
+    //localNotification.soundName = @"Soundname.ext";
+    
+    
+    // Adding information or data to the localnotification
+    localNotification.userInfo = @{@"id":@42};
+    
+    // schedule the local notification with the app
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+}
+
+
 @end

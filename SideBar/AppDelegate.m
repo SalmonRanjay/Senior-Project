@@ -36,8 +36,84 @@
     [Parse setApplicationId:@"tvUQBsqRrTFS6ozB4SljcJsj5vNci3uFdkqpEc5B"
                   clientKey:@"gwyvAG08S3hsIre4YXDFRzKVFzgK1j6P1wJ2Ku4C"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    // Request permission to use local notifications
+    UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge | UIUserNotificationTypeAlert | UIUserNotificationTypeSound categories:nil];
+    
+    // Register the local notifications
+    [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
+    
+    
     return YES;
 }
+
+// Method called once the app recieves a local notificaion
+-(void) application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
+    
+    // check if the state of the application to see if the user is inside the app or in the lock screen or else
+    if (application.applicationState == UIApplicationStateActive) {
+        
+        // user is inside the app
+        
+        // create an alert controller to display the notification body
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Notification" message:notification.alertBody preferredStyle:UIAlertControllerStyleAlert];
+        
+        // creating Uialert action for ignore button
+        
+        UIAlertAction *ignoreAction =[UIAlertAction actionWithTitle:@"Ignore" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+            
+            NSLog(@"Ignored notification");
+        }];
+        
+        // create a view action object to view the notification
+        
+        UIAlertAction *viewAction = [UIAlertAction actionWithTitle:@"View" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            
+            [self takeActionWithLocalNotification:notification];
+        }];
+        
+        
+        // adding the actions to the alert controller
+        [alertController addAction:ignoreAction];
+        [alertController addAction:viewAction];
+        
+        // present the alert controller
+        [self.window.rootViewController presentViewController:alertController animated:YES completion:^{
+            
+        }];
+        
+    }else{
+        
+        // user is outside the app
+        [self takeActionWithLocalNotification:notification];
+        
+    }
+}
+
+
+- (void) takeActionWithLocalNotification:(UILocalNotification *) localNotification{
+    
+    //NSNumber *notification_id = localNotification.userInfo[@"id"];
+    
+    // create an alert view controller to display the message
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Reminder" message:@"You have a upcoming event" preferredStyle:UIAlertControllerStyleAlert];
+    
+    // addint an "OK" action to the alert controller
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        NSLog(@"OK");
+        
+    }];
+    
+    [alertController addAction:okAction];
+    
+    // present the view controller
+    [self.window.rootViewController presentViewController:alertController animated:YES completion:^{
+        
+    }];
+}
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
