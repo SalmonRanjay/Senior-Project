@@ -9,16 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import <EventKit/EventKit.h>
+#import "InformationSessionTableViewCell.h"
 
 
-@interface DetailInformationViewController : UIViewController
+@interface DetailInformationViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>{
+    
+    IBOutlet UITableView *tableView;
+}
 
-@property (weak, nonatomic) IBOutlet UILabel *infoNameLabel;
-
-@property (weak, nonatomic) IBOutlet UILabel *infoLocationLabel;
-
-
-@property (weak, nonatomic) IBOutlet UILabel *infoCompanyLabel;
 
 @property (nonatomic, strong) PFObject *infoObject;
 
@@ -26,8 +24,10 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *infoDescriptionLabel;
 
+@property (nonatomic) NSArray *titleArray;
+@property (nonatomic) NSArray *descriptionArray;
+@property (nonatomic) NSArray *photoArray;
 
-@property (weak, nonatomic) IBOutlet UILabel *infoEventDate;
 
 - (IBAction)addToCalendar:(id)sender;
 

@@ -145,7 +145,11 @@
 -(void) customizeUserInterface{
     
     // Customize navigation bar
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:1 green:0.4314 blue:0.1569 alpha:1]];
+//    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:1 green:0.4314 blue:0.1569 alpha:1]];
+    
+//     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:1 green:0/255 blue:51/255 alpha:1]]; red nav bar
+    
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.0157 green:0.102 blue:0.3843 alpha:1]];
     
     // Setting the color of the text in the navigation bar
     [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],UITextAttributeTextColor, nil]];
@@ -154,5 +158,11 @@
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     
     
+    
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 @end

@@ -48,6 +48,8 @@
 		A6651D941A2AD3BB0019F9DA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6651D931A2AD3BB0019F9DA /* SWRevealViewController.m */; };
 		A6651D971A2AD4610019F9DA /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6651D961A2AD4610019F9DA /* MainViewController.m */; };
 		A6651D9A1A2AD4870019F9DA /* SidebarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6651D991A2AD4870019F9DA /* SidebarTableViewController.m */; };
+		A6AE0D011A944893005F3BA3 /* InformationSessionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6AE0D001A944893005F3BA3 /* InformationSessionTableViewCell.m */; };
+		A6AE0D041A966D02005F3BA3 /* JobDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6AE0D031A966D02005F3BA3 /* JobDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +124,10 @@
 		A6651D961A2AD4610019F9DA /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ../MainViewController.m; sourceTree = "<group>"; };
 		A6651D981A2AD4870019F9DA /* SidebarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SidebarTableViewController.h; path = ../SidebarTableViewController.h; sourceTree = "<group>"; };
 		A6651D991A2AD4870019F9DA /* SidebarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SidebarTableViewController.m; path = ../SidebarTableViewController.m; sourceTree = "<group>"; };
+		A6AE0CFF1A944893005F3BA3 /* InformationSessionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationSessionTableViewCell.h; sourceTree = "<group>"; };
+		A6AE0D001A944893005F3BA3 /* InformationSessionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationSessionTableViewCell.m; sourceTree = "<group>"; };
+		A6AE0D021A966D02005F3BA3 /* JobDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobDetailViewController.h; sourceTree = "<group>"; };
+		A6AE0D031A966D02005F3BA3 /* JobDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,8 +225,12 @@
 				A620CE041A47DAFB007AA4ED /* SignUpViewController.m */,
 				A62EEFFE1A31EC1F00C9661D /* JobOppTableViewController.h */,
 				A62EEFFF1A31EC1F00C9661D /* JobOppTableViewController.m */,
+				A6AE0D021A966D02005F3BA3 /* JobDetailViewController.h */,
+				A6AE0D031A966D02005F3BA3 /* JobDetailViewController.m */,
 				A6388A671A30CCEE002FB20A /* DetailInformationViewController.h */,
 				A6388A681A30CCEE002FB20A /* DetailInformationViewController.m */,
+				A6AE0CFF1A944893005F3BA3 /* InformationSessionTableViewCell.h */,
+				A6AE0D001A944893005F3BA3 /* InformationSessionTableViewCell.m */,
 				A632092E1A2DAF66004080F2 /* LoginViewController.h */,
 				A632092F1A2DAF66004080F2 /* LoginViewController.m */,
 				A632090E1A2BD263004080F2 /* InformationSessionTableViewController.h */,
@@ -406,6 +416,7 @@
 				A6651D9A1A2AD4870019F9DA /* SidebarTableViewController.m in Sources */,
 				A6388A691A30CCEE002FB20A /* DetailInformationViewController.m in Sources */,
 				A6651D501A2AC84A0019F9DA /* AppDelegate.m in Sources */,
+				A6AE0D011A944893005F3BA3 /* InformationSessionTableViewCell.m in Sources */,
 				A63C4CC31A79FE720020199B /* TableCellsViewController.m in Sources */,
 				A6651D4D1A2AC84A0019F9DA /* main.m in Sources */,
 				A62EF0001A31EC1F00C9661D /* JobOppTableViewController.m in Sources */,
@@ -416,6 +427,7 @@
 				A6651D941A2AD3BB0019F9DA /* SWRevealViewController.m in Sources */,
 				A63209301A2DAF66004080F2 /* LoginViewController.m in Sources */,
 				A6446CF91A718EBE0082F989 /* UIView+AccessViewController.m in Sources */,
+				A6AE0D041A966D02005F3BA3 /* JobDetailViewController.m in Sources */,
 				A620CE051A47DAFB007AA4ED /* SignUpViewController.m in Sources */,
 				A6651D971A2AD4610019F9DA /* MainViewController.m in Sources */,
 			);

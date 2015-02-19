@@ -7,6 +7,7 @@
 //
 
 #import "DetailInformationViewController.h"
+#import "InformationSessionTableViewCell.h"
 
 @interface DetailInformationViewController ()
 
@@ -16,12 +17,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.infoNameLabel.text = self.infoObject[@"name"];
-    self.infoLocationLabel.text = self.infoObject[@"location"];
-    //self.infoTimeLabel.text = self.infoObject[@"time"];
-    self.infoCompanyLabel.text = self.infoObject[@"company"];
-    self.infoEventDate.text = self.infoObject[@"date"];
     self.infoDescriptionLabel.text = self.infoObject[@"description"];
     //self.infoDescriptionLabel.lineBreakMode = NSLineBreakByWordWrapping;
     //self.infoDescriptionLabel.numberOfLines = 0;
@@ -29,6 +24,12 @@
     self.eventDate = [[NSDate alloc] init];
     self.eventDate = self.infoObject[@"date"];
     NSLog(@"Date: %@",self.eventDate);
+    
+    self.titleArray = @[@"Event Name",@"Location",@"Company",@"Event Date"];
+    self.descriptionArray = @[ self.infoObject[@"name"],self.infoObject[@"location"],
+                               self.infoObject[@"company"],self.infoObject[@"date"]];
+    self.photoArray =  @[@"event-icon",@"Location-Map-icon",@"business-building-icon-black",@"callendar icon",@"event-icon"];
+
     
        
 }
@@ -38,6 +39,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return self.titleArray.count;
+}
+
+
+-(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    InformationSessionTableViewCell *cell = [self->tableView dequeueReusableCellWithIdentifier:@"infoCell"];
+    
+    [cell configureTableCellEntry:[self.titleArray objectAtIndex:indexPath.row] : [self.descriptionArray objectAtIndex:indexPath.row] : [self.photoArray objectAtIndex:indexPath.row]];
+    
+    return cell;
+}
 
 /*
 #pragma mark - Navigation
@@ -50,23 +65,6 @@
 */
 
 - (IBAction)addToCalendar:(id)sender {
-    
-    // Set the Date and Time for the Event
-    //NSDateComponents *comps = [[NSDateComponents alloc] init];
-//    [comps setYear:2015];
-//    [comps setMonth:01];
-//    [comps setDay:29];
-//    [comps setHour:5];
-//    [comps setMinute:36];
-//    [comps setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EST"]];
-    //NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    
-//    NSDateFormatter  *dateformatter= [[NSDateFormatter alloc] init];
-//    NSLocale *posix = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
-//    [dateformatter setLocale:posix];
-//    [dateformatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EST"]];
-//    [dateformatter setDateFormat:@"yyyy-MM-dd HH:mm "];
-//    NSDate *date = [dateformatter dateFromString:self.infoObject[@"date"]];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     
