@@ -7,6 +7,7 @@
 //
 
 #import "JobDetailViewController.h"
+#import "InformationSessionTableViewCell.h"
 
 @interface JobDetailViewController ()
 
@@ -17,12 +18,40 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.infoDescriptionLabel.text = self.infoObject[@"description"];
+    
+    self.eventDate = [[NSDate alloc] init];
+    self.eventDate = self.infoObject[@"date"];
+    NSLog(@"Date: %@",self.eventDate);
+    
+    self.titleArray = @[@"Job Title",@"Salary",@"Company",@"Deadline Date"];
+    self.descriptionArray = @[ self.infoObject[@"name"],self.infoObject[@"salary_txt"],
+                               self.infoObject[@"company"],self.infoObject[@"date"]];
+    self.photoArray =  @[@"event-icon",@"Location-Map-icon",@"business-building-icon-black",@"callendar icon",@"event-icon"];
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return self.titleArray.count;
+    
 }
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+//    UITableViewCell *cell = [self->tableView dequeueReusableCellWithIdentifier:@"jobCell"];
+//    
+//    cell.textLabel.text = [self.titleArray objectAtIndex:indexPath.row];
+//    cell.detailTextLabel.text = [self.descriptionArray objectAtIndex:indexPath.row];
+//    cell.imageView.image = [UIImage imageNamed:[self.photoArray objectAtIndex:indexPath.row]];
+    InformationSessionTableViewCell *cell = [self->tableView dequeueReusableCellWithIdentifier:@"jobDetailCell"];
+    
+    [cell configureTableCellEntry:[self.titleArray objectAtIndex:indexPath.row] : [self.descriptionArray objectAtIndex:indexPath.row] : [self.photoArray objectAtIndex:indexPath.row]];
+    
+    return cell;
+    
+}
+
 
 /*
 #pragma mark - Navigation
@@ -33,5 +62,13 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)addToCalendar:(id)sender {
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
 
 @end

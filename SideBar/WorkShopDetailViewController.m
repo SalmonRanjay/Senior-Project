@@ -1,34 +1,32 @@
 //
-//  DetailInformationViewController.m
+//  WorkShopDetailViewController.m
 //  SideBar
 //
-//  Created by Ranjay Salmon on 12/4/14.
-//  Copyright (c) 2014 Ranjay Salmon. All rights reserved.
+//  Created by Ranjay Salmon on 2/19/15.
+//  Copyright (c) 2015 Ranjay Salmon. All rights reserved.
 //
 
-#import "DetailInformationViewController.h"
+#import "WorkShopDetailViewController.h"
 #import "InformationSessionTableViewCell.h"
-#import "EventManager.h"
 
-@interface DetailInformationViewController ()
+@interface WorkShopDetailViewController ()
 
 @end
 
-@implementation DetailInformationViewController
+@implementation WorkShopDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // Do any additional setup after loading the view.
     self.infoDescriptionLabel.text = self.infoObject[@"description"];
-    //self.infoDescriptionLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    //self.infoDescriptionLabel.numberOfLines = 0;
     
     self.eventDate = [[NSDate alloc] init];
     self.eventDate = self.infoObject[@"date"];
     NSLog(@"Date: %@",self.eventDate);
     
-    self.titleArray = @[@"Event Name",@"Location",@"Company",@"Event Date"];
+    self.titleArray = @[@"Work shop Title:",@"Location:",@"Preferred Major:",@"Date:"];
     self.descriptionArray = @[ self.infoObject[@"name"],self.infoObject[@"location"],
-                               self.infoObject[@"company"],self.infoObject[@"date"]];
+                               self.infoObject[@"target_major"],self.infoObject[@"date"]];
     self.photoArray =  @[@"event-icon",@"Location-Map-icon",@"business-building-icon-black",@"callendar icon",@"event-icon"];
     
     // Initialize Calendar, Event and Date properties
@@ -40,46 +38,56 @@
     self.cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     [self.cal setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EST"]];
     [self.cal setLocale:[NSLocale currentLocale]];
-
-
+    
+    
     self.dateFormatter = [[NSDateFormatter alloc] init];
     
     [self.dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
     [self.dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EST"]];
     [self.dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm a"];
-       
+    
+
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
--(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     return self.titleArray.count;
+    
 }
 
-
--(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    InformationSessionTableViewCell *cell = [self->tableView dequeueReusableCellWithIdentifier:@"infoCell"];
+//    UITableViewCell *cell = [self->tableView dequeueReusableCellWithIdentifier:@"wCell"];
+//    
+//    cell.textLabel.text = [self.titleArray objectAtIndex:indexPath.row];
+//    cell.detailTextLabel.text = [self.descriptionArray objectAtIndex:indexPath.row];
+//    cell.imageView.image = [UIImage imageNamed:[self.photoArray objectAtIndex:indexPath.row]];
+    
+    InformationSessionTableViewCell *cell = [self->tableView dequeueReusableCellWithIdentifier:@"wCell"];
     
     [cell configureTableCellEntry:[self.titleArray objectAtIndex:indexPath.row] : [self.descriptionArray objectAtIndex:indexPath.row] : [self.photoArray objectAtIndex:indexPath.row]];
     
     return cell;
+    
 }
 
 
 /*
-#pragma mark - Navigation
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
-*/
 
 - (IBAction)addToCalendar:(id)sender {
     
@@ -92,8 +100,8 @@
     // create date object for event from the date comps
     NSDate *eventDateAndTime = [self.cal dateFromComponents:comps];
     
-     NSLog(@"Date: %@",eventDateAndTime);
-//    
+    NSLog(@"Date: %@",eventDateAndTime);
+    //
     if ([EventManager checkIfEventExistAlready:self.cal eStore:self.eventStore eventdate:eventDateAndTime eTitle:self.infoObject[@"name"]]) {
         NSLog(@"YURIKA!!!");
         
@@ -101,7 +109,7 @@
         
         [alert show];
     }else{
-    
+        
         // Set iCal Event
         self.event.title = self.infoObject[@"name"];
         self.event.notes = self.infoObject[@"description"];
@@ -122,8 +130,8 @@
         
         [alerview show];
     }
-}
 
+}
 
 - (void)createNotification:(NSDate *)eventDateAndTime withBodyText:(NSString *) bodytext {
     // create the Local notification
@@ -153,11 +161,5 @@
     // schedule the local notification with the app
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
 }
-
--(UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
-}
-
 
 @end

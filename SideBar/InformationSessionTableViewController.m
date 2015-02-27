@@ -123,6 +123,7 @@
     self.information = self.objects;
     // Configure the cell to show todo item with a priority at the bottom
     cell.textLabel.text = object[@"name"];
+    cell.detailTextLabel.text = object[@"date"];
     cell.accessoryView = [MSCellAccessory accessoryWithType:FLAT_DISCLOSURE_INDICATOR color:disclosureColor];
     cell.imageView.image = [UIImage imageNamed:@"Info"];
     
@@ -152,6 +153,12 @@
     
    
 }
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 
 
 - (IBAction)logout:(id)sender {

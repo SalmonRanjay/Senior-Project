@@ -50,6 +50,8 @@
 		A6651D9A1A2AD4870019F9DA /* SidebarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6651D991A2AD4870019F9DA /* SidebarTableViewController.m */; };
 		A6AE0D011A944893005F3BA3 /* InformationSessionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6AE0D001A944893005F3BA3 /* InformationSessionTableViewCell.m */; };
 		A6AE0D041A966D02005F3BA3 /* JobDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6AE0D031A966D02005F3BA3 /* JobDetailViewController.m */; };
+		A6AE0D071A96835F005F3BA3 /* WorkShopDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6AE0D061A96835F005F3BA3 /* WorkShopDetailViewController.m */; };
+		A6AE0D0A1A9E1816005F3BA3 /* EventManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A6AE0D091A9E1816005F3BA3 /* EventManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +130,10 @@
 		A6AE0D001A944893005F3BA3 /* InformationSessionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationSessionTableViewCell.m; sourceTree = "<group>"; };
 		A6AE0D021A966D02005F3BA3 /* JobDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobDetailViewController.h; sourceTree = "<group>"; };
 		A6AE0D031A966D02005F3BA3 /* JobDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobDetailViewController.m; sourceTree = "<group>"; };
+		A6AE0D051A96835F005F3BA3 /* WorkShopDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkShopDetailViewController.h; sourceTree = "<group>"; };
+		A6AE0D061A96835F005F3BA3 /* WorkShopDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkShopDetailViewController.m; sourceTree = "<group>"; };
+		A6AE0D081A9E1816005F3BA3 /* EventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventManager.h; sourceTree = "<group>"; };
+		A6AE0D091A9E1816005F3BA3 /* EventManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,35 +224,39 @@
 			isa = PBXGroup;
 			children = (
 				A6446CF31A718EBE0082F989 /* MSCellAccessory */,
+				A6651D541A2AC84B0019F9DA /* Main.storyboard */,
 				A6651D4E1A2AC84A0019F9DA /* AppDelegate.h */,
 				A6651D4F1A2AC84A0019F9DA /* AppDelegate.m */,
-				A6651D541A2AC84B0019F9DA /* Main.storyboard */,
-				A620CE031A47DAFB007AA4ED /* SignUpViewController.h */,
-				A620CE041A47DAFB007AA4ED /* SignUpViewController.m */,
+				A6651D981A2AD4870019F9DA /* SidebarTableViewController.h */,
+				A6651D991A2AD4870019F9DA /* SidebarTableViewController.m */,
+				A6AE0CFF1A944893005F3BA3 /* InformationSessionTableViewCell.h */,
+				A6AE0D001A944893005F3BA3 /* InformationSessionTableViewCell.m */,
+				A632090E1A2BD263004080F2 /* InformationSessionTableViewController.h */,
+				A632090F1A2BD263004080F2 /* InformationSessionTableViewController.m */,
+				A6388A671A30CCEE002FB20A /* DetailInformationViewController.h */,
+				A6388A681A30CCEE002FB20A /* DetailInformationViewController.m */,
 				A62EEFFE1A31EC1F00C9661D /* JobOppTableViewController.h */,
 				A62EEFFF1A31EC1F00C9661D /* JobOppTableViewController.m */,
 				A6AE0D021A966D02005F3BA3 /* JobDetailViewController.h */,
 				A6AE0D031A966D02005F3BA3 /* JobDetailViewController.m */,
-				A6388A671A30CCEE002FB20A /* DetailInformationViewController.h */,
-				A6388A681A30CCEE002FB20A /* DetailInformationViewController.m */,
-				A6AE0CFF1A944893005F3BA3 /* InformationSessionTableViewCell.h */,
-				A6AE0D001A944893005F3BA3 /* InformationSessionTableViewCell.m */,
-				A632092E1A2DAF66004080F2 /* LoginViewController.h */,
-				A632092F1A2DAF66004080F2 /* LoginViewController.m */,
-				A632090E1A2BD263004080F2 /* InformationSessionTableViewController.h */,
-				A632090F1A2BD263004080F2 /* InformationSessionTableViewController.m */,
-				A63C4CC11A79FE710020199B /* TableCellsViewController.h */,
-				A63C4CC21A79FE720020199B /* TableCellsViewController.m */,
 				A63209111A2BD2B5004080F2 /* WorkshopTableViewController.h */,
 				A63209121A2BD2B5004080F2 /* WorkshopTableViewController.m */,
+				A6AE0D051A96835F005F3BA3 /* WorkShopDetailViewController.h */,
+				A6AE0D061A96835F005F3BA3 /* WorkShopDetailViewController.m */,
 				A63209141A2BD2EF004080F2 /* RoadMapTableViewController.h */,
 				A63209151A2BD2EF004080F2 /* RoadMapTableViewController.m */,
-				A6651D951A2AD4610019F9DA /* MainViewController.h */,
-				A6651D961A2AD4610019F9DA /* MainViewController.m */,
 				A6446CF01A717A370082F989 /* WhereTheFoodTableViewController.h */,
 				A6446CF11A717A370082F989 /* WhereTheFoodTableViewController.m */,
-				A6651D981A2AD4870019F9DA /* SidebarTableViewController.h */,
-				A6651D991A2AD4870019F9DA /* SidebarTableViewController.m */,
+				A620CE031A47DAFB007AA4ED /* SignUpViewController.h */,
+				A620CE041A47DAFB007AA4ED /* SignUpViewController.m */,
+				A6AE0D081A9E1816005F3BA3 /* EventManager.h */,
+				A6AE0D091A9E1816005F3BA3 /* EventManager.m */,
+				A632092E1A2DAF66004080F2 /* LoginViewController.h */,
+				A632092F1A2DAF66004080F2 /* LoginViewController.m */,
+				A63C4CC11A79FE710020199B /* TableCellsViewController.h */,
+				A63C4CC21A79FE720020199B /* TableCellsViewController.m */,
+				A6651D951A2AD4610019F9DA /* MainViewController.h */,
+				A6651D961A2AD4610019F9DA /* MainViewController.m */,
 				A6651D571A2AC84B0019F9DA /* Images.xcassets */,
 				A6651D591A2AC84B0019F9DA /* LaunchScreen.xib */,
 				A6651D911A2AD38E0019F9DA /* Library's */,
@@ -355,6 +365,7 @@
 				TargetAttributes = {
 					A6651D461A2AC84A0019F9DA = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 356GA2XF72;
 					};
 					A6651D5F1A2AC84B0019F9DA = {
 						CreatedOnToolsVersion = 6.1;
@@ -416,9 +427,11 @@
 				A6651D9A1A2AD4870019F9DA /* SidebarTableViewController.m in Sources */,
 				A6388A691A30CCEE002FB20A /* DetailInformationViewController.m in Sources */,
 				A6651D501A2AC84A0019F9DA /* AppDelegate.m in Sources */,
+				A6AE0D0A1A9E1816005F3BA3 /* EventManager.m in Sources */,
 				A6AE0D011A944893005F3BA3 /* InformationSessionTableViewCell.m in Sources */,
 				A63C4CC31A79FE720020199B /* TableCellsViewController.m in Sources */,
 				A6651D4D1A2AC84A0019F9DA /* main.m in Sources */,
+				A6AE0D071A96835F005F3BA3 /* WorkShopDetailViewController.m in Sources */,
 				A62EF0001A31EC1F00C9661D /* JobOppTableViewController.m in Sources */,
 				A63209101A2BD263004080F2 /* InformationSessionTableViewController.m in Sources */,
 				A6446CF21A717A370082F989 /* WhereTheFoodTableViewController.m in Sources */,
@@ -551,6 +564,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SideBar",
@@ -558,6 +573,7 @@
 				INFOPLIST_FILE = SideBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -565,6 +581,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SideBar",
@@ -572,6 +590,7 @@
 				INFOPLIST_FILE = SideBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

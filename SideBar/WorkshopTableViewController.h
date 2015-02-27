@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "SWRevealViewController.h"
+#import "MSCellAccessory.h"
+#import <Parse/Parse.h>
 
-@interface WorkshopTableViewController : UITableViewController
+@interface WorkshopTableViewController : PFQueryTableViewController
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 

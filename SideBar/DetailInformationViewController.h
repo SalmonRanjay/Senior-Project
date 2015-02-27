@@ -29,6 +29,12 @@
 @property (nonatomic) NSArray *photoArray;
 
 
+@property (nonatomic) EKEventStore *eventStore;
+@property (nonatomic) EKEvent *event;
+@property (nonatomic) NSDateFormatter *dateFormatter;
+@property (nonatomic) NSCalendar *cal;
+
+
 - (IBAction)addToCalendar:(id)sender;
 
 @end

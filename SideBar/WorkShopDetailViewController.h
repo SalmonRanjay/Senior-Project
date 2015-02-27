@@ -1,5 +1,5 @@
 //
-//  JobDetailViewController.h
+//  WorkShopDetailViewController.h
 //  SideBar
 //
 //  Created by Ranjay Salmon on 2/19/15.
@@ -9,24 +9,27 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import <EventKit/EventKit.h>
+#import "EventManager.h"
 
-@interface JobDetailViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>{
+@interface WorkShopDetailViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>{
     
     IBOutlet UITableView *tableView;
-}
 
+}
 
 
 @property (nonatomic, strong) PFObject *infoObject;
 @property (nonatomic, strong) NSDate *eventDate;
-
-@property (weak, nonatomic) IBOutlet UILabel *infoDescriptionLabel;
-
-
 @property (nonatomic) NSArray *titleArray;
 @property (nonatomic) NSArray *descriptionArray;
 @property (nonatomic) NSArray *photoArray;
 
+@property (nonatomic) EKEventStore *eventStore;
+@property (nonatomic) EKEvent *event;
+@property (nonatomic) NSDateFormatter *dateFormatter;
+@property (nonatomic) NSCalendar *cal;
+
+@property (weak, nonatomic) IBOutlet UILabel *infoDescriptionLabel;
 
 - (IBAction)addToCalendar:(id)sender;
 
