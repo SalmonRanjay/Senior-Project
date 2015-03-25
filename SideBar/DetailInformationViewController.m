@@ -47,7 +47,8 @@
     [self.dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
     [self.dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EST"]];
     [self.dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm a"];
-       
+    
+           
 }
 
 - (void)didReceiveMemoryWarning {
@@ -122,6 +123,9 @@
         
         [alerview show];
     }
+    
+    
+   
 }
 
 

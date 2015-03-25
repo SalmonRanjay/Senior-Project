@@ -94,7 +94,7 @@
 {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
     
-    [query whereKey:@"target_major" equalTo:@"Computer Science"];
+    //[query whereKey:@"target_major" equalTo:@"Computer Science"];
     //query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     
     return query;
@@ -125,7 +125,8 @@
     cell.textLabel.text = object[@"name"];
     cell.detailTextLabel.text = object[@"date"];
     cell.accessoryView = [MSCellAccessory accessoryWithType:FLAT_DISCLOSURE_INDICATOR color:disclosureColor];
-    cell.imageView.image = [UIImage imageNamed:@"Info"];
+    cell.imageView.image = [UIImage imageNamed:@"Letter-I-icon"];
+    
     
     
   

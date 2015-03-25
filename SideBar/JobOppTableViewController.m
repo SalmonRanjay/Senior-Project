@@ -65,7 +65,7 @@
 {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
     
-    [query whereKey:@"target_major" equalTo:@"Computer Science"];
+    //[query whereKey:@"target_major" equalTo:@"Computer Science"];
     //query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     
     return query;
@@ -88,6 +88,7 @@
     cell.textLabel.text = object[@"name"];
     UIColor *disclosureColor =[UIColor colorWithRed:1 green:0 blue:51/255 alpha:1];
     cell.accessoryView = [MSCellAccessory accessoryWithType:FLAT_DISCLOSURE_INDICATOR color:disclosureColor];
+    cell.imageView.image = [UIImage imageNamed:@"Letter-J-icon"];
     
     
     return cell;
