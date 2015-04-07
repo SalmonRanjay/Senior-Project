@@ -54,6 +54,7 @@
 		A6AE0D041A966D02005F3BA3 /* JobDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6AE0D031A966D02005F3BA3 /* JobDetailViewController.m */; };
 		A6AE0D071A96835F005F3BA3 /* WorkShopDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6AE0D061A96835F005F3BA3 /* WorkShopDetailViewController.m */; };
 		A6AE0D0A1A9E1816005F3BA3 /* EventManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A6AE0D091A9E1816005F3BA3 /* EventManager.m */; };
+		A6F8F9E51AD460A500C2BF33 /* InformationSession.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F8F9E41AD460A500C2BF33 /* InformationSession.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,8 @@
 		A6AE0D061A96835F005F3BA3 /* WorkShopDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkShopDetailViewController.m; sourceTree = "<group>"; };
 		A6AE0D081A9E1816005F3BA3 /* EventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventManager.h; sourceTree = "<group>"; };
 		A6AE0D091A9E1816005F3BA3 /* EventManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventManager.m; sourceTree = "<group>"; };
+		A6F8F9E31AD460A500C2BF33 /* InformationSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationSession.h; sourceTree = "<group>"; };
+		A6F8F9E41AD460A500C2BF33 /* InformationSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationSession.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +245,8 @@
 		A6651D3E1A2AC84A0019F9DA = {
 			isa = PBXGroup;
 			children = (
+				A6F8F9E31AD460A500C2BF33 /* InformationSession.h */,
+				A6F8F9E41AD460A500C2BF33 /* InformationSession.m */,
 				A6651D491A2AC84A0019F9DA /* SideBar */,
 				A6651D631A2AC84B0019F9DA /* SideBarTests */,
 				A6651D481A2AC84A0019F9DA /* Products */,
@@ -458,6 +463,7 @@
 				A6AE0D0A1A9E1816005F3BA3 /* EventManager.m in Sources */,
 				A6AE0D011A944893005F3BA3 /* InformationSessionTableViewCell.m in Sources */,
 				A63C4CC31A79FE720020199B /* TableCellsViewController.m in Sources */,
+				A6F8F9E51AD460A500C2BF33 /* InformationSession.m in Sources */,
 				A629403A1ABFA23A00B09D7E /* ProfileViewController.m in Sources */,
 				A6651D4D1A2AC84A0019F9DA /* main.m in Sources */,
 				A6AE0D071A96835F005F3BA3 /* WorkShopDetailViewController.m in Sources */,

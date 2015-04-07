@@ -9,12 +9,15 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import "MSCellAccessory.h"
+#import "InformationSession.h"
 
 @interface InformationSessionTableViewController : PFQueryTableViewController
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property(nonatomic,strong) NSArray *information;
 
+
+@property (nonatomic, strong) NSMutableArray *Sessions;
 
 - (IBAction)logout:(id)sender;
 

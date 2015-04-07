@@ -20,6 +20,10 @@
 @property (nonatomic, strong) NSMutableArray *workshopTitle;
 @property (nonatomic, strong) NSMutableArray *workshopDescription;
 @property (nonatomic, strong) NSMutableArray *workshopTime;
+@property (nonatomic, strong) NSArray* workShopItems;
+@property (nonatomic, strong) NSArray* informationItems;
+@property (nonatomic, strong) NSArray* jobItems;
+
 
 @property (nonatomic, strong) NSMutableArray *jobTitle;
 @property (nonatomic, strong) NSMutableArray *jobDescription;

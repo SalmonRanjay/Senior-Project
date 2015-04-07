@@ -40,25 +40,21 @@
     self.jobDescription = [[NSMutableArray alloc] init];
     
     
-    // Request WorkShop Data
     
-    
-    // Request Job Data
-    
-//    self.arrayOne = @[@"Bob",@"tom",@"mary"];
-//    self.arrayTwo = @[@"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tincidunt leo id metus blandit, eget pulvinar felis efficitur. Fusce at magna ex. Etiam quis tincidunt tortor, ac malesuada sem. Maecenas ",@"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tincidunt leo id metus blandit, eget pulvinar felis efficitur. Fusce at magna ex. Etiam quis tincidunt tortor, ac malesuada sem. Maecenas ",@"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tincidunt leo id metus blandit, eget pulvinar felis efficitur. Fusce at magna ex. Etiam quis tincidunt tortor, ac malesuada sem. Maecenas "];
-//    self.arrayThree = @[@"Pen",@"Book",@"Folder"];
-    self.sectionTitle = @[@"Information Sessons",@"WorkShops",@"Jobs"];
-
-}
-
-- (void) viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
     
     // Request Information session data
     
     PFQuery *query = [PFQuery queryWithClassName:@"Information_Sessions"];
     [query setLimit: 3];
+    
+    //REquest job Data
+    PFQuery *jquery = [PFQuery queryWithClassName:@"Job"];
+    [jquery setLimit: 3];
+    
+    //Request Workshop data
+    PFQuery *wquery = [PFQuery queryWithClassName:@"Workshops"];
+    [wquery setLimit: 3];
+    
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             // The find succeeded. The first 100 objects are available in objects
@@ -75,28 +71,10 @@
                 [self.informationDescription addObject: description];
                 [self.informationTime addObject: date];
                 [self.tableView reloadData];
-            }
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
-    
-    PFQuery *wquery = [PFQuery queryWithClassName:@"Workshops"];
-    [wquery setLimit: 3];
-    [wquery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            // The find succeeded. The first 100 objects are available in objects
-            for (PFObject *obj in objects) {
                 
-                NSString *title = obj[@"name"];
-                NSString *description = obj[@"description"];
-                NSString *date = obj[@"date"];
                 
-                [self.workshopTitle addObject:title];
-                [self.workshopDescription addObject: description];
-                [self.workshopTime addObject: date];
-                [self.tableView reloadData];
+                // Request job data
+                
             }
         } else {
             // Log details of the failure
@@ -105,8 +83,7 @@
     }];
     
     
-    PFQuery *jquery = [PFQuery queryWithClassName:@"Job"];
-    [jquery setLimit: 3];
+   
     [jquery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             // The find succeeded. The first 100 objects are available in objects
@@ -129,8 +106,47 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
+    
+    
+    [wquery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded. The first 100 objects are available in objects
+            for (PFObject *obj in objects) {
+                
+                NSString *title = obj[@"name"];
+                NSString *description = obj[@"description"];
+                NSString *date = obj[@"date"];
+                
+                [self.workshopTitle addObject:title];
+                [self.workshopDescription addObject: description];
+                [self.workshopTime addObject: date];
+                NSLog(@"%@",self.workshopDescription);
+                NSLog(@"%@",self.workshopTime);
+                NSLog(@"%@",self.workshopTitle);
+                
+                [self.tableView reloadData];
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
+    
+    
+    
+    // Request WorkShop Data
+    
+    
+    // Request Job Data
+    
+    self.sectionTitle = @[@"Information Sessons",@"WorkShops",@"Jobs"];
 
+}
 
+- (void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
     
     
 }
@@ -169,20 +185,53 @@
     //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"rMapCell" forIndexPath:indexPath];
     RoadMapTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"rMapCell" forIndexPath:indexPath];
     
-    // Configure the cell...
-    if (indexPath.section == 0) {
-        //cell.textLabel.text = [self.arrayOne objectAtIndex:indexPath.row];
-        [cell configureTableCellEntry:[self.informationTitle objectAtIndex:indexPath.row] :[self.informationDescription objectAtIndex:indexPath.row] :@"Letter-I-icon" : [self.informationTime objectAtIndex:indexPath.row]];
-    }else if (indexPath.section == 1){
-        //cell.textLabel.text = [self.arrayTwo objectAtIndex:indexPath.row];
-        [cell configureTableCellEntry:[self.workshopTitle objectAtIndex:indexPath.row] :[self.workshopDescription objectAtIndex:indexPath.row] :@"Letter-W-icon" : [self.workshopTime objectAtIndex:indexPath.row]];
-        
-    }else{
-      
-       // cell.textLabel.text = [self.arrayThree objectAtIndex:indexPath.row];
-        [cell configureTableCellEntry:[self.jobTitle objectAtIndex:indexPath.row] :[self.jobDescription objectAtIndex:indexPath.row] :@"Letter-J-icon" : @"N/A"];
-    }
+//    // Configure the cell...
+//    if (indexPath.section == 0) {
+//        //cell.textLabel.text = [self.arrayOne objectAtIndex:indexPath.row];
+//        [cell configureTableCellEntry:[self.informationTitle objectAtIndex:indexPath.row] :[self.informationDescription objectAtIndex:indexPath.row] :@"Letter-I-icon" : [self.informationTime objectAtIndex:indexPath.row]];
+//    }else if (indexPath.section == 1){
+//        //cell.textLabel.text = [self.arrayTwo objectAtIndex:indexPath.row];
+//        [cell configureTableCellEntry:[self.workshopTitle objectAtIndex:indexPath.row] :[self.workshopDescription objectAtIndex:indexPath.row] :@"Letter-W-icon" : [self.workshopTime objectAtIndex:indexPath.row]];
+//        
+//    }else{
+//      
+//       // cell.textLabel.text = [self.arrayThree objectAtIndex:indexPath.row];
+//        [cell configureTableCellEntry:[self.jobTitle objectAtIndex:indexPath.row] :[self.jobDescription objectAtIndex:indexPath.row] :@"Letter-J-icon" : @"N/A"];
+//    }
     
+    switch (indexPath.section) {
+        case 0:
+            
+            if (self.informationTitle.count > 0 || self.informationTime.count > 0 || self.informationDescription.count > 0 ){
+                [cell configureTableCellEntry:[self.informationTitle objectAtIndex:indexPath.row] :[self.informationDescription objectAtIndex:indexPath.row] :@"Letter-I-icon" : [self.informationTime objectAtIndex:indexPath.row]];
+            }else{
+                [cell configureTableCellEntry:@"N/A" :@"N/A" :@"Letter-I-icon" : @"N/A"];
+            }
+            
+            break;
+            
+        case 1:
+            
+            if (self.jobTitle.count > 0 || self.jobTime.count > 0 || self.jobDescription.count > 0 ){
+            [cell configureTableCellEntry:[self.jobTitle objectAtIndex:indexPath.row] :[self.jobDescription objectAtIndex:indexPath.row] :@"Letter-J-icon" : @"N/A"];
+            }else{
+                [cell configureTableCellEntry:@"N/A" :@"N/A" :@"Letter-J-icon" : @"N/A"];
+            }
+            break;
+            
+        case 2:
+            if (self.workshopTitle.count > 0 || self.workshopTime.count > 0 || self.workshopDescription.count > 0 ){
+            [cell configureTableCellEntry:[self.workshopTitle objectAtIndex:indexPath.row] :[self.workshopDescription objectAtIndex:indexPath.row] :@"Letter-W-icon" : [self.workshopTime objectAtIndex:indexPath.row]];
+            }else{
+                [cell configureTableCellEntry:@"N/A" :@"N/A" :@"Letter-W-icon" : @"N/A"];
+            }
+            break;
+            
+            
+        default:
+            [cell configureTableCellEntry:@"N/A" :@"N/A" :@"Letter-J-icon" : @"N/A"];
+            break;
+    }
     return cell;
     
     

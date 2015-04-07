@@ -23,7 +23,7 @@
 //    self.tableView.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
 //    self.tableView.separatorColor = [UIColor colorWithWhite:0.15f alpha:0.2f];
     
-    self.menuItems = @[@"title", @"info-session", @"workshop", @"road-map", @"food",@"profile",@"job-opp"];
+    self.menuItems = @[@"title", @"info-session",@"workshop" ,@"road-map",@"profile",@"job-opp"];
 }
 
 - (void)didReceiveMemoryWarning {
